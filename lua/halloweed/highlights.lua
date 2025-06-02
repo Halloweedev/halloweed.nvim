@@ -7,6 +7,7 @@ function M.setup(colors)
     NormalNC     = { fg = colors.fg, bg = colors.menu },
     CursorLine   = { bg = colors.gray },
     CursorLineNr = { fg = colors.orange },
+    CursorColumn = { bg = colors.gray },
     LineNr       = { fg = colors.darker_gray },
     VertSplit    = { fg = colors.gray },
     Visual       = { bg = colors.gray },
