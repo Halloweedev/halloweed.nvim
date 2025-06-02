@@ -3,7 +3,7 @@
 🎨 A minimalist light Neovim colorscheme with a soft, clean, and readable palette.  
 Perfect for daytime development, clarity-focused workflows, and those who like their editor bright but not blinding.
 
-![License](https://img.shields.io/github/license/yourname/halloweed.nvim)
+![License](https://img.shields.io/github/license/halloweedev/halloweed.nvim)
 ![Neovim](https://img.shields.io/badge/Neovim-0.7%2B-blueviolet)
 
 ---
