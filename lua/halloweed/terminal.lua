@@ -1,6 +1,5 @@
 
 local M = {}
-local config = require("halloweed.config")  -- your config module if any
 local colors = require("halloweed.colors")
 
 function M.setup()
