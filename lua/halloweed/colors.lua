@@ -1,7 +1,4 @@
-
 local M = {}
-
-local util = require('halloweed.util')
 
 local palettes = {
     light = {
@@ -19,13 +16,23 @@ local palettes = {
         gray = "#F0EFEB",
         darker_gray = "#ABB0B6",
         lighter_gray = "#F8F8F8",
+
+        -- Derived colors (now hardcoded hex values, no longer using util.darken)
+        diff_add = "#E6FFED", -- Light green for added lines
+        diff_change = "#FFFBE6", -- Light yellow for changed lines
+        diff_delete = "#FFE6E6", -- Light red for deleted lines
+        diff_text = "#FFF0B3", -- Slightly darker yellow for changed text
+
+        -- Hardcoded darker versions of colors for explicit control
+        dark_red = "#D4260A",    -- Slightly darker red
+        dark_purple = "#7630C1", -- Slightly darker purple
+        dark_yellow = "#E0C845", -- Slightly darker yellow
+        dark_cyan = "#4DA891",   -- Slightly darker cyan
+
+        bg_darker_sidebar = "#F5F5F5", -- Slightly darker background for sidebars (explicit hex)
     },
     -- future dark variants here
 }
-
--- Add derived colors after base palette is declared to avoid circular refs
--- palettes.light.cursorline_bg = util.darken(palettes.light.bg, 0.05)
--- palettes.light.light_orange = util.lighten(palettes.light.orange, 0.2)
 
 function M.setup(style)
     return palettes[style] or palettes["light"]
