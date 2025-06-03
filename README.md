@@ -44,7 +44,9 @@ use {
   end
 }
 
-⚙️ Configuration
+---
+
+### ⚙️ Configuration
 
 require("halloweed").setup({
   style = "light",        -- only 'light' supported for now
@@ -62,6 +64,47 @@ require("halloweed").setup({
     Comment = { fg = "#999999", italic = true },
   }
 })
+
+---
+
+### 🖥️ UI + Window Highlights
+
+    Normal: Main window text (foreground) and background when Neovim is focused.
+    NormalNC: Same as Normal, but for non-active windows or when Neovim loses focus.
+    CursorLine: Highlights the entire line under the cursor (background only).
+    CursorLineNr: The line number of the current line. Makes it stand out.
+    CursorColumn: Highlights the entire column under the cursor (use with :set cursorcolumn).
+    LineNr: Line numbers on the side (non-cursor line).
+    VertSplit: The vertical line between split windows (i.e., |).
+    Visual: Background when selecting text in visual mode.
+    Search: Highlight for search results (e.g., using /).
+    StatusLine: The bottom line (shows filename, mode, etc.).
+    Title: Used for titles (e.g., :help, plugins, popups).
+
+🧠 Syntax Highlighting
+
+    Comment: Used for code comments.
+    Constant: General constants (overrides below if not specified).
+    String, Character: Text in quotes (e.g., "hello", 'a').
+    Number, Float, Boolean: Numeric literals, booleans like true, false.
+    Identifier: Names of variables, properties.
+    Function: Function names and calls.
+    Statement: Keywords like if, for, return, etc.
+    Conditional, Repeat, Label, Operator, Keyword, Exception: Subcategories of Statement.
+    Type, StorageClass, Structure, Typedef: Data types (e.g., int, class, struct).
+    Special: Anything special (often used for escapes, brackets, etc).
+    Underlined: Underlined text, often used in markdown or links.
+    Todo: Matches TODO/FIXME comments.
+
+⚠️ Messages and Prompts
+
+    Error: Used for errors.
+    WarningMsg: Warnings (e.g., missing file, etc).
+
+🍱 Menus and Popups
+
+    Pmenu: Popup menu (like completion menu).
+    PmenuSel: Selected item in that popup.
 
 🧩 File Structure
 
