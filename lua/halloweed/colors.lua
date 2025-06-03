@@ -16,9 +16,9 @@ local palettes = {
         green = "#63C82D",
         yellow = "#FFDB4D",
         purple = "#8638E5",
-        gray = "F0EFEB",
+        gray = "#F0EFEB",
         darker_gray = "#ABB0B6",
-        lighter_gray = "F8F8F8",
+        lighter_gray = "#F8F8F8",
     },
     -- future dark variants here
 }
