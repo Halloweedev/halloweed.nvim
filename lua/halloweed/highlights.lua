@@ -321,10 +321,10 @@ function M.setup(colors, cfg)
     end
 
     -- 🧪 LSP & Diagnostics: Highlights for Language Server Protocol (LSP) features and diagnostic messages.
-    local diagnostics_error_color = cfg.diagnostics.darker and colors.dark_red or colors.red
-    local diagnostics_hint_color = cfg.diagnostics.darker and colors.dark_purple or colors.purple
-    local diagnostics_warn_color = cfg.diagnostics.darker and colors.dark_yellow or colors.yellow
-    local diagnostics_info_color = cfg.diagnostics.darker and colors.dark_cyan or colors.cyan
+    local diagnostics_error_color = colors.dark_red or colors.red
+    local diagnostics_hint_color = colors.dark_purple or colors.purple
+    local diagnostics_warn_color = colors.dark_yellow or colors.yellow
+    local diagnostics_info_color = colors.dark_cyan or colors.cyan
 
     hl.plugins.lsp = {
         -- Specific LSP C++ highlights (often provided by clangd)
