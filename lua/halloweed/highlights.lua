@@ -106,6 +106,7 @@ function M.setup(colors, cfg)
         WildMenu = { fg = colors.black, bg = colors.blue },                                     -- Wildmenu completion (command-line completion)
         PmenuThumb = { fg = "none", bg = colors.orange },                                       -- Scrollbar thumb in popup menu
         Question = { fg = colors.yellow },                                                      -- Questions in the command line (e.g., :confirm)
+        SignColumn = { fg = colors.fg, bg = colors.bg_inactive },                               -- Sets the warning column gutter default text and background
         SpellBad = { fg = "none", undercurl = true, sp = colors.red },                          -- Spelling error (bad word)
         SpellCap = { fg = "none", undercurl = true, sp = colors.yellow },                       -- Spelling error (capitalization)
         SpellLocal = { fg = "none", undercurl = true, sp = colors.blue },                       -- Spelling error (local word)
