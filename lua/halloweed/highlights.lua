@@ -68,8 +68,8 @@ function M.setup(colors, cfg)
         iCursor = { bg = colors.green },                                                        -- Character under the cursor in insert mode
         lCursor = { bg = colors.lighter_gray },                                                 -- Character under the cursor in language mode
         CursorIM = { bg = colors.lighter_gray },                                                -- Character under the cursor in input method mode
-        CursorColumn = { bg = colors.lighter_gray },                                            -- Highlight for the current column (if 'cursorcolumn' is set)
-        CursorLine = { bg = colors.lighter_gray },                                              -- Highlight for the current line (if 'cursorline' is set)
+        CursorColumn = { bg = colors.bg_inactive },                                            -- Highlight for the current column (if 'cursorcolumn' is set)
+        CursorLine = { bg = colors.bg_inactive },                                              -- Highlight for the current line (if 'cursorline' is set)
         ColorColumn = { bg = colors.lighter_gray },                                             -- Highlight for a specific column (if 'colorcolumn' is set)
         CursorLineNr = { fg = colors.orange, bold = true },                                     -- Line number of the current line
         LineNr = { fg = colors.gray, bg = colors.bg_inactive },                                                          -- Line numbers (non-current line)
