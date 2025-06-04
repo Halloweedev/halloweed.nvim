@@ -30,11 +30,25 @@ function util.blend(fg, bg, alpha)
 end
 
 function util.darken(hex, amount, bg)
-  return util.blend(hex, bg or util.bg, math.abs(amount))
+  -- Convert to RGB, reduce each channel, convert back
+  local rgb = hexToRgb(hex)
+  local factor = 1 - math.abs(amount)
+  local darkenChannel = function(channel)
+    return math.floor(math.min(math.max(0, channel * factor), 255) + 0.5)
+  end
+  return string.format("#%02X%02X%02X", darkenChannel(rgb[1]), darkenChannel(rgb[2]), darkenChannel(rgb[3]))
 end
 
 function util.lighten(hex, amount, fg)
-  return util.blend(hex, fg or util.fg, math.abs(amount))
+  -- Convert to RGB, increase each channel towards white, convert back
+  local rgb = hexToRgb(hex)
+  local factor = math.abs(amount)
+  local lightenChannel = function(channel)
+    -- Lighten by moving towards 255 (white)
+    local lightened = channel + (255 - channel) * factor
+    return math.floor(math.min(math.max(0, lightened), 255) + 0.5)
+  end
+  return string.format("#%02X%02X%02X", lightenChannel(rgb[1]), lightenChannel(rgb[2]), lightenChannel(rgb[3]))
 end
 
 return util
