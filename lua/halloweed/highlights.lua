@@ -325,7 +325,14 @@ function M.setup(colors, cfg)
     local diagnostics_hint_color = colors.dark_purple or colors.purple
     local diagnostics_warn_color = colors.dark_yellow or colors.yellow
     local diagnostics_info_color = colors.dark_cyan or colors.cyan
-
+-- Add this debugging code right before the DiagnosticVirtualTextError line
+print("DEBUG: cfg =", cfg)
+print("DEBUG: cfg.diagnostics =", cfg and cfg.diagnostics)
+print("DEBUG: cfg.diagnostics.background =", cfg and cfg.diagnostics and cfg.diagnostics.background)
+print("DEBUG: util =", util)
+print("DEBUG: util.darken =", util and util.darken)
+print("DEBUG: diagnostics_error_color =", diagnostics_error_color)
+print("DEBUG: colors.bg =", colors and colors.bg)
     hl.plugins.lsp = {
         -- Specific LSP C++ highlights (often provided by clangd)
         LspCxxHlGroupEnumConstant = colors_helper.Orange,                                       -- C++ enum constants
