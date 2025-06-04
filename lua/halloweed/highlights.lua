@@ -334,7 +334,7 @@ function M.setup(colors, cfg)
     local diagnostics_warn_color = colors.dark_yellow or colors.yellow
     local diagnostics_info_color = colors.dark_cyan or colors.cyan
 
-        hl.plugins.lsp = {
+    hl.plugins.lsp = {
         -- Specific LSP C++ highlights (often provided by clangd)
         LspCxxHlGroupEnumConstant = colors_helper.Orange,                                       -- C++ enum constants
         LspCxxHlGroupMemberVariable = colors_helper.Orange,                                     -- C++ member variables
@@ -769,17 +769,11 @@ function M.setup(colors, cfg)
 
     -- Iterate and apply all highlights
     for _, group_table in pairs(hl) do
-        for group_name, opts in pairs(group_table) do
-            vim.api.nvim_set_hl(0, group_name, opts)
-        end
+        vim_highlights(group_table)
     end
     -- Also apply plugin highlights
     for _, plugin_group_table in pairs(hl.plugins) do
-        for group_name, opts in pairs(plugin_group_table) do
-            vim.api.nvim_set_hl(0, group_name, opts)
-        end
+        vim_highlights(plugin_group_table)
     end
 end
-
 return M
-
