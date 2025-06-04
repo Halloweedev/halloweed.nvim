@@ -19,21 +19,23 @@ function M.setup(colors, cfg)
         Black = { fg = colors.black },
         
 --        in colors
---        bg = "#FAFAFA",
+--         bg = "#FFFFFF",
+--        bg_inactive = "#FAFAFA",
 --        menu = "#FAFAFA",
 --        beige = "#FEFBEF",
 --        fg = "#5C6773",
 --        red = "#F72B0B",
 --        black = "#2C2C2C",
 --        cyan = "#58C1A6",
---        orange = "#FF6700",
+--        orange = "#FF7D1C",
 --        blue = "#5262AD",
---        green = "#63C82D",
---        yellow = "#FFDB4D",
+--       green = "#63C82D",
+--        yellow = "#F2AE49",
 --        purple = "#8638E5",
 --        gray = "#F0EFEB",
 --        darker_gray = "#ABB0B6",
 --        lighter_gray = "#F8F8F8",
+--        cursor_lines = "#FFFBFA",
 
     }
 
@@ -54,8 +56,8 @@ function M.setup(colors, cfg)
 
     -- 🖥️ Editor + Window UI: General user interface elements and core Vim window highlights.
     hl.common = {
-        Normal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },              -- Main text and background
-        NormalNC = { fg = colors.fg, bg = cfg.bg_inactive },
+        Normal = { fg = colors.fg, bg = colors.bg },              -- Main text and background
+        NormalNC = { fg = colors.fg, bg = colors.bg_inactive },
         Terminal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },            -- Terminal window background
         EndOfBuffer = { fg = cfg.ending_tildes and colors.menu or colors.bg, bg = cfg.transparent and "none" or colors.bg }, -- Tildes (~) at the end of the buffer
         FoldColumn = { fg = colors.gray, bg = cfg.transparent and "none" or colors.menu },      -- Column for fold indicators
