@@ -24,6 +24,16 @@ function M.setup(colors, cfg)
         plugins = {}, -- Plugin-specific highlights
     }
 
+    local function vim_highlights(highlights)
+        for group_name, group_settings in pairs(highlights) do
+            vim.api.nvim_command(string.format("highlight %s guifg=%s guibg=%s guisp=%s gui=%s", group_name,
+            group_settings.fg or "none",
+            group_settings.bg or "none",
+            group_settings.sp or "none",
+            group_settings.fmt or "none"))
+        end
+    end
+
     -- 🖥️ Editor + Window UI: General user interface elements and core Vim window highlights.
     hl.common = {
         Normal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },              -- Main text and background
