@@ -2,20 +2,23 @@ local M = {}
 
 local palettes = {
     light = {
-        bg = "#FAFAFA",
-        menu = "#FEFBEF",
+        bg = "#FFFFFF",
+        bg_inactive = "FAFAFA";
+        menu = "#FAFAFA",
+        beige = "#FEFBEF",
         fg = "#5C6773",
         red = "#F72B0B",
         black = "#2C2C2C",
         cyan = "#58C1A6",
-        orange = "#FF6700",
+        orange = "#FF7D1C",
         blue = "#5262AD",
         green = "#63C82D",
-        yellow = "#FFDB4D",
+        yellow = "#F2AE49",
         purple = "#8638E5",
         gray = "#F0EFEB",
         darker_gray = "#ABB0B6",
         lighter_gray = "#F8F8F8",
+        cursor_lines = "#FFFBFA",
 
         -- Derived colors (now hardcoded hex values, no longer using util.darken)
         diff_add = "#E6FFED", -- Light green for added lines

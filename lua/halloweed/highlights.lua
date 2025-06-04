@@ -17,6 +17,24 @@ function M.setup(colors, cfg)
         Blue = { fg = colors.blue },
         Purple = { fg = colors.purple },
         Black = { fg = colors.black },
+        
+--        in colors
+--        bg = "#FAFAFA",
+--        menu = "#FAFAFA",
+--        beige = "#FEFBEF",
+--        fg = "#5C6773",
+--        red = "#F72B0B",
+--        black = "#2C2C2C",
+--        cyan = "#58C1A6",
+--        orange = "#FF6700",
+--        blue = "#5262AD",
+--        green = "#63C82D",
+--        yellow = "#FFDB4D",
+--        purple = "#8638E5",
+--        gray = "#F0EFEB",
+--        darker_gray = "#ABB0B6",
+--        lighter_gray = "#F8F8F8",
+
     }
 
     local hl = {
@@ -37,15 +55,16 @@ function M.setup(colors, cfg)
     -- 🖥️ Editor + Window UI: General user interface elements and core Vim window highlights.
     hl.common = {
         Normal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },              -- Main text and background
+        NormalNC = { fg = colors.fg, bg = cfg.bg_inactive },
         Terminal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },            -- Terminal window background
         EndOfBuffer = { fg = cfg.ending_tildes and colors.menu or colors.bg, bg = cfg.transparent and "none" or colors.bg }, -- Tildes (~) at the end of the buffer
         FoldColumn = { fg = colors.gray, bg = cfg.transparent and "none" or colors.menu },      -- Column for fold indicators
         Folded = { fg = colors.gray, bg = cfg.transparent and "none" or colors.menu },          -- Folded code lines
         SignColumn = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },          -- Column where signs (e.g., diagnostics, git) appear
         ToolbarLine = { fg = colors.fg },                                                       -- Toolbar line
-        Cursor = { bg = colors.lighter_gray },                                                  -- Character under the cursor in normal mode
-        vCursor = { bg = colors.lighter_gray },                                                 -- Character under the cursor in visual mode
-        iCursor = { bg = colors.lighter_gray },                                                 -- Character under the cursor in insert mode
+        Cursor = { bg = colors.blue },                                                  -- Character under the cursor in normal mode
+        vCursor = { bg = colors.red },                                                 -- Character under the cursor in visual mode
+        iCursor = { bg = colors.green },                                                 -- Character under the cursor in insert mode
         lCursor = { bg = colors.lighter_gray },                                                 -- Character under the cursor in language mode
         CursorIM = { bg = colors.lighter_gray },                                                -- Character under the cursor in input method mode
         CursorColumn = { bg = colors.lighter_gray },                                            -- Highlight for the current column (if 'cursorcolumn' is set)
@@ -97,6 +116,7 @@ function M.setup(colors, cfg)
         TabLineFill = { fg = colors.gray, bg = colors.menu },                                   -- Filler for the tab line
         TabLineSel = { fg = colors.fg, bg = colors.lighter_gray, bold = true },                 -- Selected tab in the tab line
         WinSeparator = { fg = colors.gray },                                                    -- Window separator lines
+        VertSplit = { fg = colors.gray },
         Visual = { bg = colors.gray },                                                          -- Visual mode selection background
         VisualNOS = { fg = "none", bg = colors.lighter_gray, underline = true },                -- Visual mode selection (non-start)
         QuickFixLine = { fg = colors.blue, underline = true },                                  -- Current line in quickfix window
@@ -120,7 +140,7 @@ function M.setup(colors, cfg)
         Type = colors_helper.Purple,                                                            -- Type declarations (e.g., int, class, struct)
         Structure = colors_helper.Purple,                                                       -- Structure definitions
         StorageClass = colors_helper.Purple,                                                    -- Storage class specifiers (e.g., static, extern)
-        Identifier = { fg = colors.red, fmt = cfg.code_style.variables },                      -- Variable names
+        Identifier = { fg = colors.Cyan, fmt = cfg.code_style.variables },                      -- Variable names
         Constant = colors_helper.Orange,                                                        -- User-defined constants
         PreProc = colors_helper.Purple,                                                         -- Preprocessor directives (#include, #define)
         PreCondit = colors_helper.Purple,                                                       -- Preprocessor conditionals (#if, #ifdef)
