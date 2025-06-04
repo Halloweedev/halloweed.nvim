@@ -71,7 +71,7 @@ function M.setup(colors, cfg)
         CursorColumn = { bg = colors.bg_inactive },                                            -- Highlight for the current column (if 'cursorcolumn' is set)
         CursorLine = { bg = colors.bg_inactive },                                              -- Highlight for the current line (if 'cursorline' is set)
         ColorColumn = { bg = colors.lighter_gray },                                             -- Highlight for a specific column (if 'colorcolumn' is set)
-        CursorLineNr = { fg = colors.orange, bold = true, bg = colors.bg_inactive },                                     -- Line number of the current line
+        CursorLineNr = { fg = colors.orange, bg = colors.bg_inactive, bold = true },                                     -- Line number of the current line
         LineNr = { fg = colors.gray, bg = colors.bg_inactive },                                 -- Line numbers (non-current line)
         Conceal = { fg = colors.gray, bg = colors.menu },                                       -- Concealed text (e.g., Markdown links)
         Added = colors_helper.Green,                                                            -- Text added (e.g., in diffs)
