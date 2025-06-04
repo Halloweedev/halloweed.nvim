@@ -320,20 +320,21 @@ function M.setup(colors, cfg)
         }
     end
 
+    -- Set up default diagnostics config if not provided
+    if not cfg.diagnostics then
+        cfg.diagnostics = {
+            background = false,
+            undercurl = true
+        }
+    end
+
     -- 🧪 LSP & Diagnostics: Highlights for Language Server Protocol (LSP) features and diagnostic messages.
     local diagnostics_error_color = colors.dark_red or colors.red
     local diagnostics_hint_color = colors.dark_purple or colors.purple
     local diagnostics_warn_color = colors.dark_yellow or colors.yellow
     local diagnostics_info_color = colors.dark_cyan or colors.cyan
--- Add this debugging code right before the DiagnosticVirtualTextError line
-print("DEBUG: cfg =", cfg)
-print("DEBUG: cfg.diagnostics =", cfg and cfg.diagnostics)
-print("DEBUG: cfg.diagnostics.background =", cfg and cfg.diagnostics and cfg.diagnostics.background)
-print("DEBUG: util =", util)
-print("DEBUG: util.darken =", util and util.darken)
-print("DEBUG: diagnostics_error_color =", diagnostics_error_color)
-print("DEBUG: colors.bg =", colors and colors.bg)
-    hl.plugins.lsp = {
+
+        hl.plugins.lsp = {
         -- Specific LSP C++ highlights (often provided by clangd)
         LspCxxHlGroupEnumConstant = colors_helper.Orange,                                       -- C++ enum constants
         LspCxxHlGroupMemberVariable = colors_helper.Orange,                                     -- C++ member variables
@@ -369,7 +370,6 @@ print("DEBUG: colors.bg =", colors and colors.bg)
         DiagnosticUnderlineHint = { undercurl = cfg.diagnostics.undercurl, underline = not cfg.diagnostics.undercurl, sp = colors.purple }, -- Underline for hints
         DiagnosticUnderlineInfo = { undercurl = cfg.diagnostics.undercurl, underline = not cfg.diagnostics.undercurl, sp = colors.blue }, -- Underline for info
         DiagnosticUnderlineWarn = { undercurl = cfg.diagnostics.undercurl, underline = not cfg.diagnostics.undercurl, sp = colors.yellow }, -- Underline for warnings
-
         LspReferenceText = { bg = colors.lighter_gray },                                        -- Background for text references (e.g., 'go to definition')
         LspReferenceWrite = { bg = colors.lighter_gray },                                       -- Background for write references
         LspReferenceRead = { bg = colors.lighter_gray },                                        -- Background for read references
