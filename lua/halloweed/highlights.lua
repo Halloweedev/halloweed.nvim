@@ -60,9 +60,8 @@ function M.setup(colors, cfg)
         NormalNC = { fg = colors.fg, bg = colors.bg_inactive },
         Terminal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },            -- Terminal window background
         EndOfBuffer = { fg = cfg.ending_tildes and colors.menu or colors.bg, bg = cfg.transparent and "none" or colors.bg }, -- Tildes (~) at the end of the buffer
-        FoldColumn = { fg = colors.gray, bg = cfg.transparent and "none" or colors.menu },      -- Column for fold indicators
+        FoldColumn = { fg = colors.gray, bg = colors.bg_inactive },      -- Column for fold indicators
         Folded = { fg = colors.gray, bg = cfg.transparent and "none" or colors.menu },          -- Folded code lines
-        SignColumn = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },          -- Column where signs (e.g., diagnostics, git) appear
         ToolbarLine = { fg = colors.fg },                                                       -- Toolbar line
         Cursor = { bg = colors.blue },                                                  -- Character under the cursor in normal mode
         vCursor = { bg = colors.red },                                                 -- Character under the cursor in visual mode
@@ -119,7 +118,7 @@ function M.setup(colors, cfg)
         TabLineFill = { fg = colors.gray, bg = colors.menu },                                   -- Filler for the tab line
         TabLineSel = { fg = colors.fg, bg = colors.lighter_gray, bold = true },                 -- Selected tab in the tab line
         WinSeparator = { fg = colors.gray },                                                    -- Window separator lines
-        VertSplit = { fg = colors.gray },
+        VertSplit = { fg = colors.gray },                                                       -- Same WinSeparator
         Visual = { bg = colors.gray },                                                          -- Visual mode selection background
         VisualNOS = { fg = "none", bg = colors.lighter_gray, underline = true },                -- Visual mode selection (non-start)
         QuickFixLine = { fg = colors.blue, underline = true },                                  -- Current line in quickfix window
