@@ -120,7 +120,7 @@ function M.setup(colors, cfg)
         Type = colors_helper.Purple,                                                            -- Type declarations (e.g., int, class, struct)
         Structure = colors_helper.Purple,                                                       -- Structure definitions
         StorageClass = colors_helper.Purple,                                                    -- Storage class specifiers (e.g., static, extern)
-        Identifier = { fg = colors.cyan, fmt = cfg.code_style.variables },                      -- Variable names
+        Identifier = { fg = colors.red, fmt = cfg.code_style.variables },                      -- Variable names
         Constant = colors_helper.Orange,                                                        -- User-defined constants
         PreProc = colors_helper.Purple,                                                         -- Preprocessor directives (#include, #define)
         PreCondit = colors_helper.Purple,                                                       -- Preprocessor conditionals (#if, #ifdef)
