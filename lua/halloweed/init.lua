@@ -51,7 +51,7 @@ function M.colorscheme()
   local cfg = vim.g.halloweed_config
   local colors = require("halloweed.colors").setup(cfg.style)
 
-  require("halloweed.highlights").setup(colors)
+  require("halloweed.highlights").setup(colors, cfg)
 
   if cfg.term_colors then
     require("halloweed.terminal").setup(colors)

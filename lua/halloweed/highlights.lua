@@ -1,13 +1,9 @@
---- halloweed/highlights.lua
--- Defines the highlight groups for the halloweed.nvim colorscheme.
-
--- Re-adding the 'util' require as per your request to use util.darken.
 local util = require("halloweed.util")
 
 local M = {}
 
 -- Main function to apply highlights
-function M.apply_highlights(colors, cfg)
+function M.setup(colors, cfg)
     -- Helper table to simplify applying foreground colors
     local colors_helper = {
         Fg = { fg = colors.fg },
