@@ -60,19 +60,19 @@ function M.setup(colors, cfg)
         NormalNC = { fg = colors.fg, bg = colors.bg_inactive },
         Terminal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },            -- Terminal window background
         EndOfBuffer = { fg = cfg.ending_tildes and colors.menu or colors.bg, bg = cfg.transparent and "none" or colors.bg }, -- Tildes (~) at the end of the buffer
-        FoldColumn = { fg = colors.gray, bg = colors.bg_inactive },      -- Column for fold indicators
+        FoldColumn = { fg = colors.red, bg = colors.bg_inactive },                             -- Column for fold indicators
         Folded = { fg = colors.gray, bg = cfg.transparent and "none" or colors.menu },          -- Folded code lines
         ToolbarLine = { fg = colors.fg },                                                       -- Toolbar line
-        Cursor = { bg = colors.blue },                                                  -- Character under the cursor in normal mode
-        vCursor = { bg = colors.red },                                                 -- Character under the cursor in visual mode
-        iCursor = { bg = colors.green },                                                 -- Character under the cursor in insert mode
+        Cursor = { bg = colors.blue },                                                          -- Character under the cursor in normal mode
+        vCursor = { bg = colors.red },                                                          -- Character under the cursor in visual mode
+        iCursor = { bg = colors.green },                                                        -- Character under the cursor in insert mode
         lCursor = { bg = colors.lighter_gray },                                                 -- Character under the cursor in language mode
         CursorIM = { bg = colors.lighter_gray },                                                -- Character under the cursor in input method mode
         CursorColumn = { bg = colors.lighter_gray },                                            -- Highlight for the current column (if 'cursorcolumn' is set)
         CursorLine = { bg = colors.lighter_gray },                                              -- Highlight for the current line (if 'cursorline' is set)
         ColorColumn = { bg = colors.lighter_gray },                                             -- Highlight for a specific column (if 'colorcolumn' is set)
         CursorLineNr = { fg = colors.orange, bold = true },                                     -- Line number of the current line
-        LineNr = { fg = colors.gray },                                                          -- Line numbers (non-current line)
+        LineNr = { fg = colors.gray, bg = colors.bg_inactive },                                                          -- Line numbers (non-current line)
         Conceal = { fg = colors.gray, bg = colors.menu },                                       -- Concealed text (e.g., Markdown links)
         Added = colors_helper.Green,                                                            -- Text added (e.g., in diffs)
         Removed = colors_helper.Red,                                                            -- Text removed (e.g., in diffs)
