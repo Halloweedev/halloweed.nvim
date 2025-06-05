@@ -11,31 +11,31 @@ function M.setup(colors, cfg)
         Grey = { fg = colors.gray },
         Red = { fg = colors.red },
         Cyan = { fg = colors.cyan },
-        Yellow = { fg = colors.yellow },
+        Yellow = { fg = colors.yellow }, 
         Orange = { fg = colors.orange },
         Green = { fg = colors.green },
         Blue = { fg = colors.blue },
         Purple = { fg = colors.purple },
         Black = { fg = colors.black },
-        
---        in colors
---         bg = "#FFFFFF",
---        bg_inactive = "#FAFAFA",
---        menu = "#FAFAFA",
---        beige = "#FEFBEF",
---        fg = "#5C6773",
---        red = "#F72B0B",
---        black = "#2C2C2C",
---        cyan = "#58C1A6",
---        orange = "#FF7D1C",
---        blue = "#5262AD",
---       green = "#63C82D",
---        yellow = "#F2AE49",
---        purple = "#8638E5",
---        gray = "#F0EFEB",
---        darker_gray = "#ABB0B6",
---        lighter_gray = "#F8F8F8",
---        cursor_lines = "#FFFBFA",
+
+        --        in colors
+        --         bg = "#FFFFFF",
+        --        bg_inactive = "#FAFAFA",
+        --        menu = "#FAFAFA",
+        --        beige = "#FEFBEF",
+        --        fg = "#5C6773",
+        --        red = "#F72B0B",
+        --        black = "#2C2C2C",
+        --        cyan = "#58C1A6",
+        --        orange = "#FF7D1C",
+        --        blue = "#5262AD",
+        --       green = "#63C82D",
+        --        yellow = "#F2AE49",
+        --        purple = "#8638E5",
+        --        gray = "#F0EFEB",
+        --        darker_gray = "#ABB0B6",
+        --        lighter_gray = "#F8F8F8",
+        --        cursor_lines = "#FFFBFA",
 
     }
 
@@ -56,301 +56,300 @@ function M.setup(colors, cfg)
 
     -- 🖥️ Editor + Window UI: General user interface elements and core Vim window highlights.
     hl.common = {
-        Normal = { fg = colors.fg, bg = colors.bg },              -- Main text and background
+        Normal = { fg = colors.fg, bg = colors.bg }, -- Main text and background
         NormalNC = { fg = colors.fg, bg = colors.bg_inactive },
-        Terminal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg },            -- Terminal window background
-        EndOfBuffer = { fg = cfg.ending_tildes and colors.menu or colors.bg, bg = cfg.transparent and "none" or colors.bg }, -- Tildes (~) at the end of the buffer
-        FoldColumn = { fg = colors.red, bg = colors.bg_inactive },                             -- Column for fold indicators
-        Folded = { fg = colors.gray, bg = cfg.transparent and "none" or colors.menu },          -- Folded code lines
-        ToolbarLine = { fg = colors.fg },                                                       -- Toolbar line
-        Cursor = { bg = colors.blue },                                                          -- Character under the cursor in normal mode
-        vCursor = { bg = colors.red },                                                          -- Character under the cursor in visual mode
-        iCursor = { bg = colors.green },                                                        -- Character under the cursor in insert mode
-        lCursor = { bg = colors.lighter_gray },                                                 -- Character under the cursor in language mode
-        CursorIM = { bg = colors.lighter_gray },                                                -- Character under the cursor in input method mode
-        CursorColumn = { bg = colors.bg_inactive },                                            -- Highlight for the current column (if 'cursorcolumn' is set)
-        CursorLine = { bg = colors.bg_inactive },                                              -- Highlight for the current line (if 'cursorline' is set)
-        ColorColumn = { bg = colors.lighter_gray },                                             -- Highlight for a specific column (if 'colorcolumn' is set)
-        CursorLineNr = { fg = colors.orange, bg = colors.bg_inactive, bold = true },                                     -- Line number of the current line
-        LineNr = { fg = colors.gray, bg = colors.bg_inactive },                                 -- Line numbers (non-current line)
-        Conceal = { fg = colors.gray, bg = colors.menu },                                       -- Concealed text (e.g., Markdown links)
-        Added = colors_helper.Green,                                                            -- Text added (e.g., in diffs)
-        Removed = colors_helper.Red,                                                            -- Text removed (e.g., in diffs)
-        Changed = colors_helper.Blue,                                                           -- Text changed (e.g., in diffs)
-        DiffAdd = { fg = "none", bg = colors.diff_add },                                        -- Background for added lines in diffs
-        DiffChange = { fg = "none", bg = colors.diff_change },                                  -- Background for changed lines in diffs
-        DiffDelete = { fg = "none", bg = colors.diff_delete },                                  -- Background for deleted lines in diffs
-        DiffText = { fg = "none", bg = colors.diff_text },                                      -- Background for changed text within a line in diffs
-        DiffAdded = colors_helper.Green,                                                        -- Alias for consistency (foreground for added text)
-        DiffChanged = colors_helper.Blue,                                                       -- Alias for consistency (foreground for changed text)
-        DiffRemoved = colors_helper.Red,                                                        -- Alias for consistency (foreground for removed text)
-        DiffDeleted = colors_helper.Red,                                                        -- Alias for consistency (foreground for deleted text)
-        DiffFile = colors_helper.Cyan,                                                          -- File names in diff headers
-        DiffIndexLine = colors_helper.Grey,                                                     -- Index lines in diff headers
-        Directory = { fg = colors.blue },                                                       -- Directory names
-        ErrorMsg = { fg = colors.red, bold = true },                                            -- Error messages in the command line
-        WarningMsg = { fg = colors.orange, bold = true },                                       -- Warning messages in the command line
-        MoreMsg = { fg = colors.green, bold = true },                                           -- "-- More --" prompt
-        CurSearch = { fg = colors.black, bg = colors.orange },                                  -- Current search match
-        IncSearch = { fg = colors.black, bg = colors.orange },                                  -- Incremental search match (while typing)
-        Search = { fg = colors.black, bg = colors.yellow },                                     -- All search matches
-        Substitute = { fg = colors.black, bg = colors.green },                                  -- Text replaced by :substitute
-        MatchParen = { fg = colors.red, bg = colors.lighter_gray },                             -- Matching parenthesis
-        NonText = { fg = colors.gray },                                                         -- Non-text characters (e.g., '~' at end of buffer, whitespace markers)
-        Whitespace = { fg = colors.gray },                                                      -- Visible whitespace characters
-        SpecialKey = { fg = colors.gray },                                                      -- Special keys (e.g., in help files)
-        Pmenu = { fg = colors.fg, bg = colors.menu },                                           -- Popup menu (e.g., completion menu)
-        PmenuSbar = { fg = "none", bg = colors.menu },                                          -- Scrollbar in popup menu
-        PmenuSel = { fg = colors.black, bg = colors.orange },                                   -- Selected item in popup menu
-        WildMenu = { fg = colors.black, bg = colors.blue },                                     -- Wildmenu completion (command-line completion)
-        PmenuThumb = { fg = "none", bg = colors.orange },                                       -- Scrollbar thumb in popup menu
-        Question = { fg = colors.yellow },                                                      -- Questions in the command line (e.g., :confirm)
-        SignColumn = { fg = colors.fg, bg = colors.bg_inactive },                               -- Sets the warning column gutter default text and background
-        SpellBad = { fg = "none", undercurl = true, sp = colors.red },                          -- Spelling error (bad word)
-        SpellCap = { fg = "none", undercurl = true, sp = colors.yellow },                       -- Spelling error (capitalization)
-        SpellLocal = { fg = "none", undercurl = true, sp = colors.blue },                       -- Spelling error (local word)
-        SpellRare = { fg = "none", undercurl = true, sp = colors.purple },                      -- Spelling error (rare word)
-        StatusLine = { fg = colors.fg, bg = colors.menu },                                      -- Active status line
-        StatusLineTerm = { fg = colors.fg, bg = colors.menu },                                  -- Active terminal status line
-        StatusLineNC = { fg = colors.gray, bg = colors.menu },                                  -- Inactive status line
-        StatusLineTermNC = { fg = colors.gray, bg = colors.menu },                              -- Inactive terminal status line
-        TabLine = { fg = colors.gray, bg = colors.menu },                                       -- Tab line (inactive tabs)
-        TabLineFill = { fg = colors.gray, bg = colors.menu },                                   -- Filler for the tab line
-        TabLineSel = { fg = colors.fg, bg = colors.lighter_gray, bold = true },                 -- Selected tab in the tab line
-        WinSeparator = { fg = colors.gray },                                                    -- Window separator lines
-        VertSplit = { fg = colors.gray },                                                       -- Same WinSeparator
-        Visual = { bg = colors.gray },                                                          -- Visual mode selection background
-        VisualNOS = { fg = "none", bg = colors.lighter_gray, underline = true },                -- Visual mode selection (non-start)
-        QuickFixLine = { fg = colors.blue, underline = true },                                  -- Current line in quickfix window
-        Debug = { fg = colors.yellow },                                                         -- Debugger highlight
-        debugPC = { fg = colors.black, bg = colors.green },                                     -- Debugger program counter
-        debugBreakpoint = { fg = colors.black, bg = colors.red },                               -- Debugger breakpoint
-        ToolbarButton = { fg = colors.black, bg = colors.blue },                                -- Toolbar buttons
-        FloatBorder = { fg = colors.gray, bg = colors.menu },                                   -- Border of floating windows
-        NormalFloat = { fg = colors.fg, bg = colors.menu },                                     -- Normal text in floating windows
-        FloatTitle = { fg = colors.purple, bold = true },                                       -- Title of floating windows (Neovim 0.10+)
-        FloatFooter = { fg = colors.gray },                                                     -- Footer of floating windows (Neovim 0.10+)
+        Terminal = { fg = colors.fg, bg = cfg.transparent and "none" or colors.bg }, -- Terminal window background
+        EndOfBuffer = { fg = cfg.ending_tildes and colors.menu or colors.bg, bg = cfg.transparent and "none" or colors.bg }, -- Tildes at the end of the buffer
+        FoldColumn = { fg = colors.darker_gray, bg = colors.bg_inactive }, -- Column for fold indicators
+        Folded = { fg = colors.gray, bg = cfg.transparent and "none" or colors.menu }, -- Folded code lines
+        ToolbarLine = { fg = colors.fg }, -- Toolbar line
+        Cursor = { bg = colors.blue }, -- Character under the cursor in normal mode
+        vCursor = { bg = colors.red }, -- Character under the cursor in visual mode
+        iCursor = { bg = colors.green }, -- Character under the cursor in insert mode
+        lCursor = { bg = colors.lighter_gray }, -- Character under the cursor in language mode
+        CursorIM = { bg = colors.lighter_gray }, -- Character under the cursor in input method mode
+        CursorColumn = { bg = colors.cursor_lines }, -- Highlight for the current column
+        CursorLine = { bg = colors.cursor_lines }, -- Highlight for the current line
+        ColorColumn = { bg = colors.lighter_gray }, -- Highlight for a specific column
+        CursorLineNr = { fg = colors.orange, bg = colors.bg_inactive, bold = true }, -- Line number of the current line
+        LineNr = { fg = colors.gray, bg = colors.bg_inactive }, -- Line numbers (non-current line)
+        Conceal = { fg = colors.gray, bg = colors.menu }, -- Concealed text
+        Added = { fg = colors.green }, -- Text added (e.g., in diffs)
+        Removed = { fg = colors.red }, -- Text removed (e.g., in diffs)
+        Changed = { fg = colors.blue }, -- Text changed (e.g., in diffs)
+        DiffAdd = { fg = "none", bg = colors.diff_add }, -- Background for added lines in diffs
+        DiffChange = { fg = "none", bg = colors.diff_change }, -- Background for changed lines in diffs
+        DiffDelete = { fg = "none", bg = colors.diff_delete }, -- Background for deleted lines in diffs
+        DiffText = { fg = "none", bg = colors.diff_text }, -- Background for changed text within a line in diffs
+        DiffAdded = { fg = colors.green }, -- Alias for consistency (foreground for added text)
+        DiffChanged = { fg = colors.blue }, -- Alias for consistency (foreground for changed text)
+        DiffRemoved = { fg = colors.red }, -- Alias for consistency (foreground for removed text)
+        DiffDeleted = { fg = colors.red }, -- Alias for consistency (foreground for deleted text)
+        DiffFile = { fg = colors.cyan }, -- File names in diff headers
+        DiffIndexLine = { fg = colors.darker_gray }, -- Index lines in diff headers
+        Directory = { fg = colors.blue }, -- Directory names
+        ErrorMsg = { fg = colors.red, bold = true }, -- Error messages in the command line
+        WarningMsg = { fg = colors.orange, bold = true }, -- Warning messages in the command line
+        MoreMsg = { fg = colors.green, bold = true }, -- "-- More --" prompt
+        CurSearch = { fg = colors.black, bg = colors.orange }, -- Current search match
+        IncSearch = { fg = colors.black, bg = colors.orange }, -- Incremental search match
+        Search = { fg = colors.black, bg = colors.yellow }, -- All search matches
+        Substitute = { fg = colors.black, bg = colors.green }, -- Text replaced by :substitute
+        MatchParen = { fg = colors.red, bg = colors.lighter_gray }, -- Matching parenthesis
+        NonText = { fg = colors.gray }, -- Non-text characters
+        Whitespace = { fg = colors.gray }, -- Visible whitespace characters
+        SpecialKey = { fg = colors.gray }, -- Special keys
+        Pmenu = { fg = colors.fg, bg = colors.menu }, -- Popup menu
+        PmenuSbar = { fg = "none", bg = colors.menu }, -- Scrollbar in popup menu
+        PmenuSel = { fg = colors.black, bg = colors.orange }, -- Selected item in popup menu
+        WildMenu = { fg = colors.black, bg = colors.blue }, -- Wildmenu completion
+        PmenuThumb = { fg = "none", bg = colors.orange }, -- Scrollbar thumb in popup menu
+        Question = { fg = colors.yellow }, -- Questions in the command line
+        SignColumn = { fg = colors.fg, bg = colors.bg_inactive }, -- Sign column gutter
+        SpellBad = { fg = "none", undercurl = true, sp = colors.red }, -- Spelling error (bad word)
+        SpellCap = { fg = "none", undercurl = true, sp = colors.yellow }, -- Spelling error (capitalization)
+        SpellLocal = { fg = "none", undercurl = true, sp = colors.blue }, -- Spelling error (local word)
+        SpellRare = { fg = "none", undercurl = true, sp = colors.purple }, -- Spelling error (rare word)
+        StatusLine = { fg = colors.fg, bg = colors.menu }, -- Active status line
+        StatusLineTerm = { fg = colors.fg, bg = colors.menu }, -- Active terminal status line
+        StatusLineNC = { fg = colors.gray, bg = colors.menu }, -- Inactive status line
+        StatusLineTermNC = { fg = colors.gray, bg = colors.menu }, -- Inactive terminal status line
+        TabLine = { fg = colors.gray, bg = colors.menu }, -- Tab line (inactive tabs)
+        TabLineFill = { fg = colors.gray, bg = colors.menu }, -- Filler for the tab line
+        TabLineSel = { fg = colors.fg, bg = colors.lighter_gray, bold = true }, -- Selected tab in the tab line
+        WinSeparator = { fg = colors.gray }, -- Window separator lines
+        VertSplit = { fg = colors.gray }, -- Same as WinSeparator
+        Visual = { bg = colors.gray }, -- Visual mode selection background
+        VisualNOS = { fg = "none", bg = colors.lighter_gray, underline = true }, -- Visual mode selection (non-start)
+        QuickFixLine = { fg = colors.blue, underline = true }, -- Current line in quickfix window
+        Debug = { fg = colors.yellow }, -- Debugger highlight
+        debugPC = { fg = colors.black, bg = colors.green }, -- Debugger program counter
+        debugBreakpoint = { fg = colors.black, bg = colors.red }, -- Debugger breakpoint
+        ToolbarButton = { fg = colors.black, bg = colors.blue }, -- Toolbar buttons
+        FloatBorder = { fg = colors.gray, bg = colors.menu }, -- Border of floating windows
+        NormalFloat = { fg = colors.fg, bg = colors.menu }, -- Normal text in floating windows
+        FloatTitle = { fg = colors.purple, bold = true }, -- Title of floating windows
+        FloatFooter = { fg = colors.gray }, -- Footer of floating windowsloatFooter = { fg = colors.gray },                                                  
     }
 
     -- 🧠 Syntax Highlighting: Standard Vim syntax groups for various programming language elements.
     hl.syntax = {
-        String = { fg = colors.green, fmt = cfg.code_style.strings },                           -- String literals
-        Character = colors_helper.Orange,                                                       -- Character literals
-        Number = colors_helper.Orange,                                                          -- Numeric literals
-        Float = colors_helper.Orange,                                                           -- Floating-point numbers
-        Boolean = colors_helper.Orange,                                                         -- Boolean literals (true, false)
-        Type = colors_helper.Purple,                                                            -- Type declarations (e.g., int, class, struct)
-        Structure = colors_helper.Purple,                                                       -- Structure definitions
-        StorageClass = colors_helper.Purple,                                                    -- Storage class specifiers (e.g., static, extern)
-        Identifier = { fg = colors.Cyan, fmt = cfg.code_style.variables },                      -- Variable names
-        Constant = colors_helper.Orange,                                                        -- User-defined constants
-        PreProc = colors_helper.Purple,                                                         -- Preprocessor directives (#include, #define)
-        PreCondit = colors_helper.Purple,                                                       -- Preprocessor conditionals (#if, #ifdef)
-        Include = colors_helper.Purple,                                                         -- Included files in preprocessor directives
-        Keyword = { fg = colors.red, fmt = cfg.code_style.keywords },                           -- Language keywords (e.g., if, for, while)
-        Define = colors_helper.Purple,                                                          -- #define directives
-        Typedef = colors_helper.Purple,                                                         -- Typedef declarations
-        Exception = colors_helper.Red,                                                          -- Exception handling keywords (try, catch)
-        Conditional = { fg = colors.red, fmt = cfg.code_style.keywords },                       -- Conditional statements (if, else, switch)
-        Repeat = { fg = colors.red, fmt = cfg.code_style.keywords },                            -- Loop constructs (for, while, do)
-        Statement = colors_helper.Red,                                                          -- General statements
-        Macro = colors_helper.Red,                                                              -- Macro definitions
-        Error = colors_helper.Red,                                                              -- Syntax errors
-        Label = colors_helper.Yellow,                                                           -- Labels (e.g., goto labels, case labels)
-        Special = colors_helper.Yellow,                                                         -- Special characters (e.g., escape sequences)
-        SpecialChar = colors_helper.Yellow,                                                     -- Special characters within strings
-        Function = { fg = colors.blue, fmt = cfg.code_style.functions },                        -- Function names
-        Operator = colors_helper.Orange,                                                        -- Operators (+, -, *, /, ==, etc.)
-        Title = colors_helper.Purple,                                                           -- Titles in help files
-        Tag = colors_helper.Green,                                                              -- HTML/XML tags
-        Delimiter = colors_helper.LightGrey,                                                    -- Delimiters (e.g., commas, semicolons)
-        Comment = { fg = colors.darker_gray, fmt = cfg.code_style.comments },                   -- Code comments
-        SpecialComment = { fg = colors.darker_gray, fmt = cfg.code_style.comments },            -- Special comments (e.g., `/*! ... */`)
-        Todo = { fg = colors.red, bg = colors.yellow, fmt = cfg.code_style.comments },          -- TODO comments
+        String = { fg = colors.green, fmt = cfg.code_style.strings }, -- String literals
+        Character = { fg = colors.orange }, -- Character literals
+        Number = { fg = colors.orange }, -- Numeric literals
+        Float = { fg = colors.orange }, -- Floating-point numbers
+        Boolean = { fg = colors.orange }, -- Boolean literals (true, false)
+        Type = { fg = colors.purple }, -- Type declarations (e.g., int, class, struct)
+        Structure = { fg = colors.purple }, -- Structure definitions
+        StorageClass = { fg = colors.purple }, -- Storage class specifiers (e.g., static, extern)
+        Identifier = { fg = colors.cyan, fmt = cfg.code_style.variables }, -- Variable names
+        Constant = { fg = colors.orange }, -- User-defined constants
+        PreProc = { fg = colors.purple }, -- Preprocessor directives (#include, #define)
+        PreCondit = { fg = colors.purple }, -- Preprocessor conditionals (#if, #ifdef)
+        Include = { fg = colors.purple }, -- Included files in preprocessor directives
+        Keyword = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Language keywords (e.g., if, for, while)
+        Define = { fg = colors.purple }, -- #define directives
+        Typedef = { fg = colors.purple }, -- Typedef declarations
+        Exception = { fg = colors.red }, -- Exception handling keywords (try, catch)
+        Conditional = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Conditional statements (if, else, switch)
+        Repeat = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Loop constructs (for, while, do)
+        Statement = { fg = colors.red }, -- General statements
+        Macro = { fg = colors.red }, -- Macro definitions
+        Error = { fg = colors.red }, -- Syntax errors
+        Label = { fg = colors.yellow }, -- Labels (e.g., goto labels, case labels)
+        Special = { fg = colors.yellow }, -- Special characters (e.g., escape sequences)
+        SpecialChar = { fg = colors.yellow }, -- Special characters within strings
+        Function = { fg = colors.blue, fmt = cfg.code_style.functions }, -- Function names
+        Operator = { fg = colors.orange }, -- Operators (+, -, *, /, ==, etc.)
+        Title = { fg = colors.purple }, -- Titles in help files
+        Tag = { fg = colors.green }, -- HTML/XML tags
+        Delimiter = { fg = colors.lighter_gray }, -- Delimiters (e.g., commas, semicolons)
+        Comment = { fg = colors.darker_gray, fmt = cfg.code_style.comments }, -- Code comments
+        SpecialComment = { fg = colors.darker_gray, fmt = cfg.code_style.comments }, -- Special comments (e.g., `/*! ... */`)
+        Todo = { fg = colors.red, bg = colors.yellow, fmt = cfg.code_style.comments }, -- TODO comments    
     }
 
     -- 🌳 Tree-sitter Highlighting: Highlights based on Tree-sitter's AST parsing, offering more granular control.
     if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         hl.treesitter = {
             -- nvim-treesitter@0.9.2 and after (modern naming)
-            ["@annotation"] = colors_helper.Fg,                                                 -- Annotations (e.g., Java annotations)
-            ["@attribute"] = colors_helper.Cyan,                                                -- Attributes (e.g., Python decorators, C# attributes)
-            ["@attribute.typescript"] = colors_helper.Blue,                                     -- TypeScript specific attributes
-            ["@boolean"] = colors_helper.Orange,                                                -- Boolean literals
-            ["@character"] = colors_helper.Orange,                                              -- Character literals
-            ["@comment"] = { fg = colors.darker_gray, fmt = cfg.code_style.comments },          -- Comments
-            ["@comment.todo"] = { fg = colors.red, fmt = cfg.code_style.comments },             -- TODO comments
-            ["@comment.todo.unchecked"] = { fg = colors.red, fmt = cfg.code_style.comments },   -- Unchecked TODO items
-            ["@comment.todo.checked"] = { fg = colors.green, fmt = cfg.code_style.comments },   -- Checked TODO items
-            ["@constant"] = { fg = colors.orange, fmt = cfg.code_style.constants },             -- Constants
-            ["@constant.builtin"] = { fg = colors.orange, fmt = cfg.code_style.constants },     -- Built-in constants
-            ["@constant.macro"] = { fg = colors.orange, fmt = cfg.code_style.constants },       -- Macro constants
-            ["@constructor"] = { fg = colors.purple, bold = true },                             -- Constructor functions/methods
-            ["@diff.add"] = colors_helper.Green,                                                -- Added lines in diffs
-            ["@diff.delete"] = colors_helper.Red,                                               -- Deleted lines in diffs
-            ["@diff.plus"] = colors_helper.Green,                                               -- Plus sign in diffs
-            ["@diff.minus"] = colors_helper.Red,                                                -- Minus sign in diffs
-            ["@diff.delta"] = colors_helper.Blue,                                               -- Changed lines in diffs
-            ["@error"] = colors_helper.Fg,                                                      -- Syntax errors
-            ["@function"] = { fg = colors.blue, fmt = cfg.code_style.functions },               -- Function names
-            ["@function.builtin"] = { fg = colors.cyan, fmt = cfg.code_style.functions },       -- Built-in function names
-            ["@function.macro"] = { fg = colors.cyan, fmt = cfg.code_style.functions },         -- Macro function names
-            ["@function.method"] = { fg = colors.blue, fmt = cfg.code_style.functions },        -- Method names
-            ["@keyword"] = { fg = colors.red, fmt = cfg.code_style.keywords },                  -- Keywords
-            ["@keyword.conditional"] = { fg = colors.red, fmt = cfg.code_style.keywords },      -- Conditional keywords (if, else)
-            ["@keyword.directive"] = colors_helper.Purple,                                      -- Directive keywords (e.g., #include)
-            ["@keyword.exception"] = colors_helper.Red,                                         -- Exception keywords (try, catch)
-            ["@keyword.function"] = { fg = colors.red, fmt = cfg.code_style.functions },        -- Function-related keywords
-            ["@keyword.import"] = colors_helper.Purple,                                         -- Import/export keywords
-            ["@keyword.operator"] = { fg = colors.red, fmt = cfg.code_style.keywords },         -- Operator keywords (e.g., 'and', 'or' in Python)
-            ["@keyword.repeat"] = { fg = colors.red, fmt = cfg.code_style.keywords },           -- Repeat keywords (for, while)
-            ["@label"] = colors_helper.Yellow,                                                  -- Labels
-            ["@markup.emphasis"] = { fg = colors.fg, italic = true },                           -- Emphasized text (e.g., Markdown *italic*)
-            ["@markup.environment"] = colors_helper.Fg,                                         -- Markup environment
-            ["@markup.environment.name"] = colors_helper.Fg,                                    -- Markup environment name
-            ["@markup.heading"] = { fg = colors.orange, bold = true },                          -- Markup headings
-            ["@markup.link"] = colors_helper.Blue,                                              -- Markup links
-            ["@markup.link.url"] = { fg = colors.cyan, underline = true },                      -- Markup link URLs
-            ["@markup.list"] = colors_helper.Red,                                               -- Markup list items
-            ["@markup.math"] = colors_helper.Fg,                                                -- Markup math blocks
-            ["@markup.raw"] = colors_helper.Green,                                              -- Raw markup (e.g., code blocks)
-            ["@markup.strike"] = { fg = colors.fg, strikethrough = true },                      -- Strikethrough text
-            ["@markup.strong"] = { fg = colors.fg, bold = true },                               -- Strong text (e.g., Markdown **bold**)
-            ["@markup.underline"] = { fg = colors.fg, underline = true },                       -- Underlined text
-            ["@module"] = colors_helper.Purple,                                                 -- Module names
-            ["@none"] = colors_helper.Fg,                                                       -- Default text color
-            ["@number"] = colors_helper.Orange,                                                 -- Numbers
-            ["@number.float"] = colors_helper.Orange,                                           -- Floating-point numbers
-            ["@operator"] = colors_helper.Orange,                                                   -- Operators
-            ["@parameter.reference"] = colors_helper.Fg,                                        -- Parameter references
-            ["@property"] = colors_helper.Cyan,                                                 -- Object properties/fields
-            ["@punctuation.delimiter"] = colors_helper.LightGrey,                               -- Punctuation delimiters
-            ["@punctuation.bracket"] = colors_helper.LightGrey,                                 -- Punctuation brackets
-            ["@string"] = { fg = colors.green, fmt = cfg.code_style.strings },                  -- String literals
-            ["@string.regexp"] = { fg = colors.orange, fmt = cfg.code_style.strings },          -- Regular expression strings
-            ["@string.special.symbol"] = colors_helper.Cyan,                                    -- Special symbols in strings
-            ["@tag"] = colors_helper.Purple,                                                    -- Tags (e.g., HTML/XML tags)
-            ["@tag.attribute"] = colors_helper.Yellow,                                          -- Tag attributes
-            ["@tag.delimiter"] = colors_helper.Purple,                                          -- Tag delimiters
-            ["@text"] = colors_helper.Fg,                                                       -- Plain text
-            ["@note"] = colors_helper.Fg,                                                       -- Notes in markup
-            ["@warning"] = colors_helper.Fg,                                                    -- Warnings in markup
-            ["@danger"] = colors_helper.Fg,                                                     -- Dangers in markup
-            ["@type"] = colors_helper.Purple,                                                   -- Type names
-            ["@type.builtin"] = colors_helper.Orange,                                           -- Built-in type names
-            ["@variable"] = { fg = colors.fg, fmt = cfg.code_style.variables },             -- Variable names
-            ["@variable.builtin"] = { fg = colors.red, fmt = cfg.code_style.variables },        -- Built-in variable names
-            ["@variable.member"] = colors_helper.Orange,                                          -- Member variables
-            ["@variable.parameter"] = colors_helper.Red,                                        -- Function parameters
-            ["@markup.heading.1.markdown"] = { fg = colors.red, bold = true },                  -- Markdown heading level 1
-            ["@markup.heading.2.markdown"] = { fg = colors.purple, bold = true },               -- Markdown heading level 2
-            ["@markup.heading.3.markdown"] = { fg = colors.orange, bold = true },               -- Markdown heading level 3
-            ["@markup.heading.4.markdown"] = { fg = colors.red, bold = true },                  -- Markdown heading level 4
-            ["@markup.heading.5.markdown"] = { fg = colors.purple, bold = true },               -- Markdown heading level 5
-            ["@markup.heading.6.markdown"] = { fg = colors.orange, bold = true },               -- Markdown heading level 6
-            ["@markup.heading.1.marker.markdown"] = { fg = colors.red, bold = true },           -- Markdown heading 1 marker
-            ["@markup.heading.2.marker.markdown"] = { fg = colors.purple, bold = true },        -- Markdown heading 2 marker
-            ["@markup.heading.3.marker.markdown"] = { fg = colors.orange, bold = true },        -- Markdown heading 3 marker
-            ["@markup.heading.4.marker.markdown"] = { fg = colors.red, bold = true },           -- Markdown heading 4 marker
-            ["@markup.heading.5.marker.markdown"] = { fg = colors.purple, bold = true },        -- Markdown heading 5 marker
-            ["@markup.heading.6.marker.markdown"] = { fg = colors.orange, bold = true },        -- Markdown heading 6 marker
+            ["@annotation"] = { fg = colors.fg }, -- Annotations (e.g., Java annotations)
+            ["@attribute"] = { fg = colors.cyan }, -- Attributes (e.g., Python decorators, C# attributes)
+            ["@attribute.typescript"] = { fg = colors.blue }, -- TypeScript specific attributes
+            ["@boolean"] = { fg = colors.orange }, -- Boolean literals
+            ["@character"] = { fg = colors.orange }, -- Character literals
+            ["@comment"] = { fg = colors.darker_gray, fmt = cfg.code_style.comments }, -- Comments
+            ["@comment.todo"] = { fg = colors.red, fmt = cfg.code_style.comments }, -- TODO comments
+            ["@comment.todo.unchecked"] = { fg = colors.red, fmt = cfg.code_style.comments }, -- Unchecked TODO items
+            ["@comment.todo.checked"] = { fg = colors.green, fmt = cfg.code_style.comments }, -- Checked TODO items
+            ["@constant"] = { fg = colors.orange, fmt = cfg.code_style.constants }, -- Constants
+            ["@constant.builtin"] = { fg = colors.orange, fmt = cfg.code_style.constants }, -- Built-in constants
+            ["@constant.macro"] = { fg = colors.orange, fmt = cfg.code_style.constants }, -- Macro constants
+            ["@constructor"] = { fg = colors.purple, bold = true }, -- Constructor functions/methods
+            ["@diff.add"] = { fg = colors.green }, -- Added lines in diffs
+            ["@diff.delete"] = { fg = colors.red }, -- Deleted lines in diffs
+            ["@diff.plus"] = { fg = colors.green }, -- Plus sign in diffs
+            ["@diff.minus"] = { fg = colors.red }, -- Minus sign in diffs
+            ["@diff.delta"] = { fg = colors.blue }, -- Changed lines in diffs
+            ["@error"] = { fg = colors.fg }, -- Syntax errors
+            ["@function"] = { fg = colors.blue, fmt = cfg.code_style.functions }, -- Function names
+            ["@function.builtin"] = { fg = colors.cyan, fmt = cfg.code_style.functions }, -- Built-in function names
+            ["@function.macro"] = { fg = colors.cyan, fmt = cfg.code_style.functions }, -- Macro function names
+            ["@function.method"] = { fg = colors.blue, fmt = cfg.code_style.functions }, -- Method names
+            ["@keyword"] = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Keywords
+            ["@keyword.conditional"] = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Conditional keywords (if, else)
+            ["@keyword.directive"] = { fg = colors.purple }, -- Directive keywords (e.g., #include)
+            ["@keyword.exception"] = { fg = colors.red }, -- Exception keywords (try, catch)
+            ["@keyword.function"] = { fg = colors.red, fmt = cfg.code_style.functions }, -- Function-related keywords
+            ["@keyword.import"] = { fg = colors.purple }, -- Import/export keywords
+            ["@keyword.operator"] = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Operator keywords (e.g., 'and', 'or' in Python)
+            ["@keyword.repeat"] = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Repeat keywords (for, while)
+            ["@label"] = { fg = colors.yellow }, -- Labels
+            ["@markup.emphasis"] = { fg = colors.fg, italic = true }, -- Emphasized text (e.g., Markdown *italic*)
+            ["@markup.environment"] = { fg = colors.fg }, -- Markup environment
+            ["@markup.environment.name"] = { fg = colors.fg }, -- Markup environment name
+            ["@markup.heading"] = { fg = colors.orange, bold = true }, -- Markup headings
+            ["@markup.link"] = { fg = colors.blue }, -- Markup links
+            ["@markup.link.url"] = { fg = colors.cyan, underline = true }, -- Markup link URLs
+            ["@markup.list"] = { fg = colors.red }, -- Markup list items
+            ["@markup.math"] = { fg = colors.fg }, -- Markup math blocks
+            ["@markup.raw"] = { fg = colors.green }, -- Raw markup (e.g., code blocks)
+            ["@markup.strike"] = { fg = colors.fg, strikethrough = true }, -- Strikethrough text
+            ["@markup.strong"] = { fg = colors.fg, bold = true }, -- Strong text (e.g., Markdown **bold**)
+            ["@markup.underline"] = { fg = colors.fg, underline = true }, -- Underlined text
+            ["@module"] = { fg = colors.purple }, -- Module names
+            ["@none"] = { fg = colors.fg }, -- Default text color
+            ["@number"] = { fg = colors.orange }, -- Numbers
+            ["@number.float"] = { fg = colors.orange }, -- Floating-point numbers
+            ["@operator"] = { fg = colors.orange }, -- Operators
+            ["@parameter.reference"] = { fg = colors.fg }, -- Parameter references
+            ["@property"] = { fg = colors.cyan }, -- Object properties/fields
+            ["@punctuation.delimiter"] = { fg = colors.lighter_gray }, -- Punctuation delimiters
+            ["@punctuation.bracket"] = { fg = colors.lighter_gray }, -- Punctuation brackets
+            ["@string"] = { fg = colors.green, fmt = cfg.code_style.strings }, -- String literals
+            ["@string.regexp"] = { fg = colors.orange, fmt = cfg.code_style.strings }, -- Regular expression strings
+            ["@string.special.symbol"] = { fg = colors.cyan }, -- Special symbols in strings
+            ["@tag"] = { fg = colors.purple }, -- Tags (e.g., HTML/XML tags)
+            ["@tag.attribute"] = { fg = colors.yellow }, -- Tag attributes
+            ["@tag.delimiter"] = { fg = colors.purple }, -- Tag delimiters
+            ["@text"] = { fg = colors.fg }, -- Plain text
+            ["@note"] = { fg = colors.fg }, -- Notes in markup
+            ["@warning"] = { fg = colors.fg }, -- Warnings in markup
+            ["@danger"] = { fg = colors.fg }, -- Dangers in markup
+            ["@type"] = { fg = colors.purple }, -- Type names
+            ["@type.builtin"] = { fg = colors.orange }, -- Built-in type names
+            ["@variable"] = { fg = colors.fg, fmt = cfg.code_style.variables }, -- Variable names
+            ["@variable.builtin"] = { fg = colors.orange, fmt = cfg.code_style.variables }, -- Built-in variable names
+            ["@variable.member"] = { fg = colors.yellow }, -- Member variables
+            ["@variable.parameter"] = { fg = colors.red }, -- Function parameters
+            ["@markup.heading.1.markdown"] = { fg = colors.red, bold = true }, -- Markdown heading level 1
+            ["@markup.heading.2.markdown"] = { fg = colors.purple, bold = true }, -- Markdown heading level 2
+            ["@markup.heading.3.markdown"] = { fg = colors.orange, bold = true }, -- Markdown heading level 3
+            ["@markup.heading.4.markdown"] = { fg = colors.red, bold = true }, -- Markdown heading level 4
+            ["@markup.heading.5.markdown"] = { fg = colors.purple, bold = true }, -- Markdown heading level 5
+            ["@markup.heading.6.markdown"] = { fg = colors.orange, bold = true }, -- Markdown heading level 6
+            ["@markup.heading.1.marker.markdown"] = { fg = colors.red, bold = true }, -- Markdown heading 1 marker
+            ["@markup.heading.2.marker.markdown"] = { fg = colors.purple, bold = true }, -- Markdown heading 2 marker
+            ["@markup.heading.3.marker.markdown"] = { fg = colors.orange, bold = true }, -- Markdown heading 3 marker
+            ["@markup.heading.4.marker.markdown"] = { fg = colors.red, bold = true }, -- Markdown heading 4 marker
+            ["@markup.heading.5.marker.markdown"] = { fg = colors.purple, bold = true }, -- Markdown heading 5 marker
+            ["@markup.heading.6.marker.markdown"] = { fg = colors.orange, bold = true }, -- Markdown heading 6 marker
 
             -- Old configuration for nvim-treesitter@0.9.1 and below (for backward compatibility)
-            ["@conditional"] = { fg = colors.red, fmt = cfg.code_style.keywords },              -- Conditional statements
-            ["@exception"] = colors_helper.Red,                                                 -- Exception handling
-            ["@field"] = colors_helper.Cyan,                                                    -- Field names
-            ["@float"] = colors_helper.Orange,                                                  -- Floating-point numbers
-            ["@include"] = colors_helper.Purple,                                                -- Include directives
-            ["@method"] = { fg = colors.blue, fmt = cfg.code_style.functions },                 -- Method names
-            ["@namespace"] = colors_helper.Purple,                                              -- Namespace names
-            ["@parameter"] = colors_helper.Red,                                                 -- Function parameters
-            ["@preproc"] = colors_helper.Purple,                                                -- Preprocessor directives
-            ["@punctuation.special"] = colors_helper.Red,                                       -- Special punctuation
-            ["@repeat"] = { fg = colors.red, fmt = cfg.code_style.keywords },                   -- Repeat statements
-            ["@string.regex"] = { fg = colors.orange, fmt = cfg.code_style.strings },           -- Regex strings
-            ["@string.escape"] = { fg = colors.red, fmt = cfg.code_style.strings },             -- Escape sequences in strings
-            ["@text.strong"] = { fg = colors.fg, bold = true },                                 -- Strong text
-            ["@text.emphasis"] = { fg = colors.fg, italic = true },                             -- Emphasized text
-            ["@text.underline"] = { fg = colors.fg, underline = true },                         -- Underlined text
-            ["@text.strike"] = { fg = colors.fg, strikethrough = true },                        -- Strikethrough text
-            ["@text.title"] = { fg = colors.orange, bold = true },                              -- Text titles
-            ["@text.literal"] = colors_helper.Green,                                            -- Literal text
-            ["@text.uri"] = { fg = colors.cyan, underline = true },                             -- URI text
-            ["@text.todo"] = { fg = colors.red, fmt = cfg.code_style.comments },                -- TODO text
-            ["@text.todo.unchecked"] = { fg = colors.red, fmt = cfg.code_style.comments },      -- Unchecked TODO text
-            ["@text.todo.checked"] = { fg = colors.green, fmt = cfg.code_style.comments },      -- Checked TODO text
-            ["@text.math"] = colors_helper.Fg,                                                  -- Math text
-            ["@text.reference"] = colors_helper.Blue,                                           -- Reference text
-            ["@text.environment"] = colors_helper.Fg,                                           -- Text environment
-            ["@text.environment.name"] = colors_helper.Fg,                                      -- Text environment name
-            ["@text.diff.add"] = colors_helper.Green,                                           -- Added text in diffs
-            ["@text.diff.delete"] = colors_helper.Red,                                          -- Deleted text in diffs
+            ["@conditional"] = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Conditional statements
+            ["@exception"] = { fg = colors.red }, -- Exception handling
+            ["@field"] = { fg = colors.cyan }, -- Field names
+            ["@float"] = { fg = colors.orange }, -- Floating-point numbers
+            ["@include"] = { fg = colors.purple }, -- Include directives
+            ["@method"] = { fg = colors.blue, fmt = cfg.code_style.functions }, -- Method names
+            ["@namespace"] = { fg = colors.purple }, -- Namespace names
+            ["@parameter"] = { fg = colors.red }, -- Function parameters
+            ["@preproc"] = { fg = colors.purple }, -- Preprocessor directives
+            ["@punctuation.special"] = { fg = colors.red }, -- Special punctuation
+            ["@repeat"] = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Repeat statements
+            ["@string.regex"] = { fg = colors.orange, fmt = cfg.code_style.strings }, -- Regex strings
+            ["@string.escape"] = { fg = colors.red, fmt = cfg.code_style.strings }, -- Escape sequences in strings
+            ["@text.strong"] = { fg = colors.fg, bold = true }, -- Strong text
+            ["@text.emphasis"] = { fg = colors.fg, italic = true }, -- Emphasized text
+            ["@text.underline"] = { fg = colors.fg, underline = true }, -- Underlined text
+            ["@text.strike"] = { fg = colors.fg, strikethrough = true }, -- Strikethrough text
+            ["@text.title"] = { fg = colors.orange, bold = true }, -- Text titles
+            ["@text.literal"] = { fg = colors.green }, -- Literal text
+            ["@text.uri"] = { fg = colors.cyan, underline = true }, -- URI text
+            ["@text.todo"] = { fg = colors.red, fmt = cfg.code_style.comments }, -- TODO text
+            ["@text.todo.unchecked"] = { fg = colors.red, fmt = cfg.code_style.comments }, -- Unchecked TODO text
+            ["@text.todo.checked"] = { fg = colors.green, fmt = cfg.code_style.comments }, -- Checked TODO text
+            ["@text.math"] = { fg = colors.fg }, -- Math text
+            ["@text.reference"] = { fg = colors.blue }, -- Reference text
+            ["@text.environment"] = { fg = colors.fg }, -- Text environment
+            ["@text.environment.name"] = { fg = colors.fg }, -- Text environment name
+            ["@text.diff.add"] = { fg = colors.green }, -- Added text in diffs
+            ["@text.diff.delete"] = { fg = colors.red }, -- Deleted text in diffs
         }
     else
         -- Fallback for Neovim < 0.8 (older TS naming)
         hl.treesitter = {
-            TSAnnotation = colors_helper.Fg,                                                    -- Annotations
-            TSAttribute = colors_helper.Cyan,                                                   -- Attributes
-            TSBoolean = colors_helper.Orange,                                                   -- Boolean literals
-            TSCharacter = colors_helper.Orange,                                                 -- Character literals
-            TSComment = { fg = colors.darker_gray, fmt = cfg.code_style.comments },             -- Comments
-            TSConditional = { fg = colors.red, fmt = cfg.code_style.keywords },                 -- Conditional statements
-            TSConstant = colors_helper.Orange,                                                  -- Constants
-            TSConstBuiltin = colors_helper.Orange,                                              -- Built-in constants
-            TSConstMacro = colors_helper.Orange,                                                -- Macro constants
-            TSConstructor = { fg = colors.purple, bold = true },                                -- Constructor functions/methods
-            TSError = colors_helper.Fg,                                                         -- Syntax errors
-            TSException = colors_helper.Red,                                                    -- Exception handling
-            TSField = colors_helper.Orange,                                                     -- Field names
-            TSFloat = colors_helper.Orange,                                                     -- Floating-point numbers
-            TSFunction = { fg = colors.blue, fmt = cfg.code_style.functions },                  -- Function names
-            TSFuncBuiltin = { fg = colors.cyan, fmt = cfg.code_style.functions },               -- Built-in function names
-            TSFuncMacro = { fg = colors.cyan, fmt = cfg.code_style.functions },                 -- Macro function names
-            TSInclude = colors_helper.Purple,                                                   -- Include directives
-            TSKeyword = { fg = colors.red, fmt = cfg.code_style.keywords },                     -- Keywords
-            TSKeywordFunction = { fg = colors.red, fmt = cfg.code_style.functions },            -- Function-related keywords
-            TSKeywordOperator = { fg = colors.red, fmt = cfg.code_style.keywords },             -- Operator keywords
-            TSLabel = colors_helper.Yellow,                                                     -- Labels
-            TSMethod = { fg = colors.blue, fmt = cfg.code_style.functions },                    -- Method names
-            TSNamespace = colors_helper.Purple,                                                 -- Namespace names
-            TSNone = colors_helper.Fg,                                                          -- Default text color
-            TSNumber = colors_helper.Orange,                                                    -- Numbers
-            TSOperator = colors_helper.Orange,                                                      -- Operators
-            TSParameter = colors_helper.Red,                                                    -- Function parameters
-            TSParameterReference = colors_helper.Fg,                                            -- Parameter references
-            TSProperty = colors_helper.Cyan,                                                    -- Object properties/fields
-            TSPunctDelimiter = colors_helper.LightGrey,                                         -- Punctuation delimiters
-            TSPunctBracket = colors_helper.LightGrey,                                           -- Punctuation brackets
-            TSPunctSpecial = colors_helper.Red,                                                 -- Special punctuation
-            TSRepeat = { fg = colors.red, fmt = cfg.code_style.keywords },                      -- Repeat statements
-            TSString = { fg = colors.green, fmt = cfg.code_style.strings },                     -- String literals
-            TSStringRegex = { fg = colors.orange, fmt = cfg.code_style.strings },               -- Regex strings
-            TSStringEscape = { fg = colors.red, fmt = cfg.code_style.strings },                 -- Escape sequences in strings
-            TSSymbol = colors_helper.Cyan,                                                      -- Symbols
-            TSTag = colors_helper.Purple,                                                       -- Tags
-            TSTagDelimiter = colors_helper.Purple,                                              -- Tag delimiters
-            TSText = colors_helper.Fg,                                                          -- Plain text
-            TSStrong = { fg = colors.fg, bold = true },                                         -- Strong text
-            TSEmphasis = { fg = colors.fg, italic = true },                                     -- Emphasized text
-            TSUnderline = { fg = colors.fg, underline = true },                                 -- Underlined text
-            TSStrike = { fg = colors.fg, strikethrough = true },                                -- Strikethrough text
-            TSTitle = { fg = colors.orange, bold = true },                                      -- Text titles
-            TSLiteral = colors_helper.Green,                                                    -- Literal text
-            TSURI = { fg = colors.cyan, underline = true },                                     -- URI text
-            TSMath = colors_helper.Fg,                                                          -- Math text
-            TSTextReference = colors_helper.Blue,                                               -- Reference text
-            TSEnvironment = colors_helper.Fg,                                                   -- Text environment
-            TSEnvironmentName = colors_helper.Fg,                                               -- Text environment name
-            TSNote = colors_helper.Fg,                                                          -- Notes
-            TSWarning = colors_helper.Fg,                                                       -- Warnings
-            TSDanger = colors_helper.Fg,                                                        -- Dangers
-            TSType = colors_helper.Purple,                                                      -- Type names
-            TSTypeBuiltin = colors_helper.Orange,                                               -- Built-in type names
-            TSVariable = { fg = colors.fg, fmt = cfg.code_style.variables },                    -- Variable names
-            TSVariableBuiltin = { fg = colors.red, fmt = cfg.code_style.variables },            -- Built-in variable names
+            TSAnnotation = { fg = colors.fg }, -- Annotations
+            TSAttribute = { fg = colors.cyan }, -- Attributes
+            TSBoolean = { fg = colors.orange }, -- Boolean literals
+            TSCharacter = { fg = colors.orange }, -- Character literals
+            TSComment = { fg = colors.darker_gray, fmt = cfg.code_style.comments }, -- Comments
+            TSConditional = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Conditional statements
+            TSConstant = { fg = colors.orange }, -- Constants
+            TSConstBuiltin = { fg = colors.orange }, -- Built-in constants
+            TSConstMacro = { fg = colors.orange }, -- Macro constants
+            TSConstructor = { fg = colors.purple, bold = true }, -- Constructor functions/methods
+            TSError = { fg = colors.fg }, -- Syntax errors
+            TSException = { fg = colors.red }, -- Exception handling
+            TSField = { fg = colors.cyan }, -- Field names
+            TSFloat = { fg = colors.orange }, -- Floating-point numbers
+            TSFunction = { fg = colors.blue, fmt = cfg.code_style.functions }, -- Function names
+            TSFuncBuiltin = { fg = colors.cyan, fmt = cfg.code_style.functions }, -- Built-in function names
+            TSFuncMacro = { fg = colors.cyan, fmt = cfg.code_style.functions }, -- Macro function names
+            TSInclude = { fg = colors.purple }, -- Include directives
+            TSKeyword = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Keywords
+            TSKeywordFunction = { fg = colors.red, fmt = cfg.code_style.functions }, -- Function-related keywords
+            TSKeywordOperator = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Operator keywords
+            TSLabel = { fg = colors.yellow }, -- Labels
+            TSMethod = { fg = colors.blue, fmt = cfg.code_style.functions }, -- Method names
+            TSNamespace = { fg = colors.purple }, -- Namespace names
+            TSNone = { fg = colors.fg }, -- Default text color
+            TSNumber = { fg = colors.orange }, -- Numbers
+            TSOperator = { fg = colors.orange }, -- Operators
+            TSParameter = { fg = colors.red }, -- Function parameters
+            TSParameterReference = { fg = colors.fg }, -- Parameter references
+            TSProperty = { fg = colors.cyan }, -- Object properties/fields
+            TSPunctDelimiter = { fg = colors.lighter_gray }, -- Punctuation delimiters
+            TSPunctBracket = { fg = colors.lighter_gray }, -- Punctuation brackets
+            TSPunctSpecial = { fg = colors.red }, -- Special punctuation
+            TSRepeat = { fg = colors.red, fmt = cfg.code_style.keywords }, -- Repeat statements
+            TSString = { fg = colors.green, fmt = cfg.code_style.strings }, -- String literals
+            TSStringRegex = { fg = colors.orange, fmt = cfg.code_style.strings }, -- Regex strings
+            TSStringEscape = { fg = colors.red, fmt = cfg.code_style.strings }, -- Escape sequences in strings
+            TSSymbol = { fg = colors.cyan }, -- Symbols
+            TSTag = { fg = colors.purple }, -- Tags
+            TSTagDelimiter = { fg = colors.purple }, -- Tag delimiters
+            TSText = { fg = colors.fg }, -- Plain text
+            TSStrong = { fg = colors.fg, bold = true }, -- Strong text
+            TSEmphasis = { fg = colors.fg, italic = true }, -- Emphasized text
+            TSUnderline = { fg = colors.fg, underline = true }, -- Underlined text
+            TSStrike = { fg = colors.fg, strikethrough = true }, -- Strikethrough text
+            TSTitle = { fg = colors.orange, bold = true }, -- Text titles
+            TSLiteral = { fg = colors.green }, -- Literal text
+            TSURI = { fg = colors.cyan, underline = true }, -- URI text
+            TSMath = { fg = colors.fg }, -- Math text
+            TSTextReference = { fg = colors.blue }, -- Reference text
+            TSEnvironment = { fg = colors.fg }, -- Text environment
+            TSEnvironmentName = { fg = colors.fg }, -- Text environment name
+            TSNote = { fg = colors.fg }, -- Notes
+            TSWarning = { fg = colors.fg }, -- Warnings
+            TSDanger = { fg = colors.fg }, -- Dangers
+            TSType = { fg = colors.purple }, -- Type names
+            TSTypeBuiltin = { fg = colors.orange }, -- Built-in type names
+            TSVariable = { fg = colors.fg, fmt = cfg.code_style.variables }, -- Variable names
+            TSVariableBuiltin = { fg = colors.red, fmt = cfg.code_style.variables }, -- Built-in variable names
         }
     end
-
     -- Set up default diagnostics config if not provided
     if not cfg.diagnostics then
         cfg.diagnostics = {
