@@ -228,7 +228,6 @@ function M.setup(colors, cfg)
             ["@punctuation.bracket"] = colors_helper.LightGrey,                                 -- Punctuation brackets
             ["@string"] = { fg = colors.green, fmt = cfg.code_style.strings },                  -- String literals
             ["@string.regexp"] = { fg = colors.orange, fmt = cfg.code_style.strings },          -- Regular expression strings
-            ["@string.escape"] = { fg = colors.red, fmt = cfg.code_style.strings },             -- Escape sequences in strings
             ["@string.special.symbol"] = colors_helper.Cyan,                                    -- Special symbols in strings
             ["@tag"] = colors_helper.Purple,                                                    -- Tags (e.g., HTML/XML tags)
             ["@tag.attribute"] = colors_helper.Yellow,                                          -- Tag attributes
@@ -239,9 +238,9 @@ function M.setup(colors, cfg)
             ["@danger"] = colors_helper.Fg,                                                     -- Dangers in markup
             ["@type"] = colors_helper.Purple,                                                   -- Type names
             ["@type.builtin"] = colors_helper.Orange,                                           -- Built-in type names
-            ["@variable"] = { fg = colors.orange, fmt = cfg.code_style.variables },                 -- Variable names
+            ["@variable"] = { fg = colors.fg, fmt = cfg.code_style.variables },             -- Variable names
             ["@variable.builtin"] = { fg = colors.red, fmt = cfg.code_style.variables },        -- Built-in variable names
-            ["@variable.member"] = colors_helper.Cyan,                                          -- Member variables
+            ["@variable.member"] = colors_helper.Orange,                                          -- Member variables
             ["@variable.parameter"] = colors_helper.Red,                                        -- Function parameters
             ["@markup.heading.1.markdown"] = { fg = colors.red, bold = true },                  -- Markdown heading level 1
             ["@markup.heading.2.markdown"] = { fg = colors.purple, bold = true },               -- Markdown heading level 2
