@@ -239,7 +239,7 @@ function M.setup(colors, cfg)
             ["@danger"] = colors_helper.Fg,                                                     -- Dangers in markup
             ["@type"] = colors_helper.Purple,                                                   -- Type names
             ["@type.builtin"] = colors_helper.Orange,                                           -- Built-in type names
-            ["@variable"] = { fg = colors.fg, fmt = cfg.code_style.variables },                 -- Variable names
+            ["@variable"] = { fg = colors.orange, fmt = cfg.code_style.variables },                 -- Variable names
             ["@variable.builtin"] = { fg = colors.red, fmt = cfg.code_style.variables },        -- Built-in variable names
             ["@variable.member"] = colors_helper.Cyan,                                          -- Member variables
             ["@variable.parameter"] = colors_helper.Red,                                        -- Function parameters
