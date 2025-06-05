@@ -223,7 +223,7 @@ function M.setup(colors, cfg)
             ["@markup.strike"] = { fg = colors.fg, style = "strikethrough" }, -- Strikethrough text
             ["@markup.strong"] = { fg = colors.fg, style = "bold" }, -- Strong text (e.g., Markdown **bold**)
             ["@markup.underline"] = { fg = colors.fg, style = "underline" }, -- Underlined text
-            ["@module"] = { fg = colors.purple }, -- Module names
+            ["@module"] = { fg = colors.yellow }, -- Module names
             ["@none"] = { fg = colors.fg }, -- Default text color
             ["@number"] = { fg = colors.orange }, -- Numbers
             ["@number.float"] = { fg = colors.orange }, -- Floating-point numbers
@@ -242,8 +242,26 @@ function M.setup(colors, cfg)
             ["@note"] = { fg = colors.fg }, -- Notes in markup
             ["@warning"] = { fg = colors.fg }, -- Warnings in markup
             ["@danger"] = { fg = colors.fg }, -- Dangers in markup
-            ["@type"] = { fg = colors.purple }, -- Type names
+            --["@type"] = { fg = colors.purple }, -- Type names
             ["@type.builtin"] = { fg = colors.orange }, -- Built-in type names
+            ["@type.property"] = { link = '@type' }, -- Property type names
+            ['@type.qualifier'] = { fg = colors.orange },
+            ['@lsp.type.namespace'] = { link = '@module' },
+            ['@lsp.type.type'] = { link = '@type' },
+            ['@lsp.type.class'] = { link = '@type' },
+            ['@lsp.type.enum'] = { link = '@type' },
+            ['@lsp.type.interface'] = { link = '@type' },
+            ['@lsp.type.struct'] = { link = '@variable.member' },
+            ['@lsp.type.parameter'] = { fg = colors.purple },
+            ['@lsp.type.field'] = { link = '@variable.member' },
+            ['@lsp.type.variable'] = { link = '@variable' },
+            ['@lsp.type.property'] = { link = '@property' },
+            ['@lsp.type.enumMember'] = { link = '@constant' },
+            ['@lsp.type.function'] = { link = '@function' },
+            ['@lsp.type.method'] = { link = '@function.method' },
+            ['@lsp.type.macro'] = { link = '@function.macro' },
+            ['@lsp.type.decorator'] = { link = '@function' },
+            ['@lsp.mod.constant'] = { link = '@constant' },
             ["@variable"] = { fg = colors.fg, style = cfg.code_style.variables }, -- Variable names
             ["@variable.builtin"] = { fg = colors.orange, style = cfg.code_style.variables }, -- Built-in variable names
             ["@variable.member"] = { fg = colors.yellow }, -- Member variables
@@ -352,7 +370,7 @@ function M.setup(colors, cfg)
             TSWarning = { fg = colors.fg }, -- Warnings
             TSDanger = { fg = colors.fg }, -- Dangers
             TSType = { fg = colors.purple }, -- Type names
-            TSTypeBuiltin = { fg = colors.orange }, -- Built-in type names
+            TSTypeBuiltin = { fg = colors.blue }, -- Built-in type names
             TSVariable = { fg = colors.fg, style = cfg.code_style.variables }, -- Variable names
             TSVariableBuiltin = { fg = colors.red, style = cfg.code_style.variables }, -- Built-in variable names
         }        end
