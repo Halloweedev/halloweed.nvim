@@ -223,8 +223,8 @@ function M.setup(colors, cfg)
             ["@operator"] = { fg = colors.orange }, -- Operators
             ["@parameter.reference"] = { fg = colors.fg }, -- Parameter references
             ["@property"] = { fg = colors.cyan }, -- Object properties/fields
-            ["@punctuation.delimiter"] = { fg = colors.lighter_gray }, -- Punctuation delimiters
-            ["@punctuation.bracket"] = { fg = colors.lighter_gray }, -- Punctuation brackets
+            ["@punctuation.delimiter"] = { fg = colors.fg }, -- Punctuation delimiters
+            ["@punctuation.bracket"] = { fg = colors.fg }, -- Punctuation brackets
             ["@string"] = { fg = colors.green, style = cfg.code_style.strings }, -- String literals
             ["@string.regexp"] = { fg = colors.orange, style = cfg.code_style.strings }, -- Regular expression strings
             ["@string.special.symbol"] = { fg = colors.cyan }, -- Special symbols in strings
