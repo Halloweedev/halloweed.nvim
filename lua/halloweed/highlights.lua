@@ -221,7 +221,7 @@ function M.setup(colors, cfg)
             ["@none"] = colors_helper.Fg,                                                       -- Default text color
             ["@number"] = colors_helper.Orange,                                                 -- Numbers
             ["@number.float"] = colors_helper.Orange,                                           -- Floating-point numbers
-            ["@operator"] = colors_helper.Fg,                                                   -- Operators
+            ["@operator"] = colors_helper.Orange,                                                   -- Operators
             ["@parameter.reference"] = colors_helper.Fg,                                        -- Parameter references
             ["@property"] = colors_helper.Cyan,                                                 -- Object properties/fields
             ["@punctuation.delimiter"] = colors_helper.LightGrey,                               -- Punctuation delimiters
@@ -316,7 +316,7 @@ function M.setup(colors, cfg)
             TSNamespace = colors_helper.Purple,                                                 -- Namespace names
             TSNone = colors_helper.Fg,                                                          -- Default text color
             TSNumber = colors_helper.Orange,                                                    -- Numbers
-            TSOperator = colors_helper.Fg,                                                      -- Operators
+            TSOperator = colors_helper.Orange,                                                      -- Operators
             TSParameter = colors_helper.Red,                                                    -- Function parameters
             TSParameterReference = colors_helper.Fg,                                            -- Parameter references
             TSProperty = colors_helper.Cyan,                                                    -- Object properties/fields
