@@ -229,7 +229,7 @@ function M.setup(colors, cfg)
             ["@number.float"] = { fg = colors.orange }, -- Floating-point numbers
             ["@operator"] = { fg = colors.orange }, -- Operators
             ["@parameter.reference"] = { fg = colors.fg }, -- Parameter references
-            ["@property"] = { fg = colors.yellow }, -- Object properties/fields
+            ["@property"] = { fg = colors.blue }, -- Object properties/fields
             ["@punctuation.delimiter"] = { fg = colors.fg }, -- Punctuation delimiters
             ["@punctuation.bracket"] = { fg = colors.fg }, -- Punctuation brackets
             ["@string"] = { fg = colors.green, style = cfg.code_style.strings }, -- String literals
@@ -323,9 +323,9 @@ function M.setup(colors, cfg)
             TSNone = { fg = colors.fg }, -- Default text color
             TSNumber = { fg = colors.orange }, -- Numbers
             TSOperator = { fg = colors.orange }, -- Operators
-            TSParameter = { fg = colors.red }, -- Function parameters
+            TSParameter = { fg = colors.fg }, -- Function parameters
             TSParameterReference = { fg = colors.fg }, -- Parameter references
-            TSProperty = { fg = colors.cyan }, -- Object properties/fields
+            TSProperty = { fg = colors.blue }, -- Object properties/fields
             TSPunctDelimiter = { fg = colors.lighter_gray }, -- Punctuation delimiters
             TSPunctBracket = { fg = colors.lighter_gray }, -- Punctuation brackets
             TSPunctSpecial = { fg = colors.red }, -- Special punctuation
