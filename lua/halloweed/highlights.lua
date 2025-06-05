@@ -265,7 +265,7 @@ function M.setup(colors, cfg)
             ["@variable"] = { fg = colors.fg, style = cfg.code_style.variables }, -- Variable names
             ["@variable.builtin"] = { fg = colors.orange, style = cfg.code_style.variables }, -- Built-in variable names
             ["@variable.member"] = { fg = colors.yellow }, -- Member variables
-            ["@variable.parameter"] = { fg = colors.red }, -- Function parameters
+            ["@variable.parameter"] = { fg = colors.purple }, -- Function parameters
             ["@markup.heading.1.markdown"] = { fg = colors.red, style = "bold" }, -- Markdown heading level 1
             ["@markup.heading.2.markdown"] = { fg = colors.purple, style = "bold" }, -- Markdown heading level 2
             ["@markup.heading.3.markdown"] = { fg = colors.orange, style = "bold" }, -- Markdown heading level 3
@@ -456,6 +456,25 @@ function M.setup(colors, cfg)
             hl.plugins.lsp["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"] -- LSP type modifier for default library variable
             hl.plugins.lsp["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"]          -- LSP type modifier for injected variable
             hl.plugins.lsp["@lsp.typemod.variable.static"] = hl.treesitter["@constant"]            -- LSP type modifier for static variable
+            
+            -- Need to find out if these fits the above or are different.
+            --['@lsp.type.namespace'] = { link = '@module' },
+            --['@lsp.type.type'] = { link = '@type' },
+            --['@lsp.type.class'] = { link = '@type' },
+            --['@lsp.type.enum'] = { link = '@type' },
+            --['@lsp.type.interface'] = { link = '@type' },
+            --['@lsp.type.struct'] = { link = '@variable.member' },
+            --['@lsp.type.parameter'] = { fg = colors.purple },
+            --['@lsp.type.field'] = { link = '@variable.member' },
+            --['@lsp.type.variable'] = { link = '@variable' },
+            --['@lsp.type.property'] = { link = '@property' },
+            --['@lsp.type.enumMember'] = { link = '@constant' },
+            --['@lsp.type.function'] = { link = '@function' },
+            --['@lsp.type.method'] = { link = '@function.method' },
+            --['@lsp.type.macro'] = { link = '@function.macro' },
+            --['@lsp.type.decorator'] = { link = '@function' },
+            --['@lsp.mod.constant'] = { link = '@constant' },
+
         end
 
         -- Aliases for LSP diagnostics (for compatibility)
