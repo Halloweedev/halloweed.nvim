@@ -269,7 +269,7 @@ function M.setup(colors, cfg)
             ["@include"] = { fg = colors.purple }, -- Include directives
             ["@method"] = { fg = colors.blue, style = cfg.code_style.functions }, -- Method names
             ["@namespace"] = { fg = colors.purple }, -- Namespace names
-            ["@parameter"] = { fg = colors.red }, -- Function parameters
+            ["@parameter"] = { fg = colors.fg }, -- Function parameters
             ["@preproc"] = { fg = colors.purple }, -- Preprocessor directives
             ["@punctuation.special"] = { fg = colors.red }, -- Special punctuation
             ["@repeat"] = { fg = colors.red, style = cfg.code_style.keywords }, -- Repeat statements
@@ -289,7 +289,7 @@ function M.setup(colors, cfg)
             ["@text.reference"] = { fg = colors.blue }, -- Reference text
             ["@text.environment"] = { fg = colors.fg }, -- Text environment
             ["@text.environment.name"] = { fg = colors.fg }, -- Text environment name
-            ["@text.diff.add"] = { fg = colors.green }, -- Added text in diffs
+            ["@text.diff.add"] = { fg = colors.green }, -- Added text in diffs5c6166
             ["@text.diff.delete"] = { fg = colors.red }, -- Deleted text in diffs        
         }
 
