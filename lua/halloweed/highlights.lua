@@ -160,7 +160,7 @@ function M.setup(colors, cfg)
         Special = colors_helper.Yellow,                                                         -- Special characters (e.g., escape sequences)
         SpecialChar = colors_helper.Yellow,                                                     -- Special characters within strings
         Function = { fg = colors.blue, fmt = cfg.code_style.functions },                        -- Function names
-        Operator = colors_helper.Fg,                                                            -- Operators (+, -, *, /, ==, etc.)
+        Operator = colors_helper.Orange,                                                        -- Operators (+, -, *, /, ==, etc.)
         Title = colors_helper.Purple,                                                           -- Titles in help files
         Tag = colors_helper.Green,                                                              -- HTML/XML tags
         Delimiter = colors_helper.LightGrey,                                                    -- Delimiters (e.g., commas, semicolons)
@@ -302,7 +302,7 @@ function M.setup(colors, cfg)
             TSConstructor = { fg = colors.purple, bold = true },                                -- Constructor functions/methods
             TSError = colors_helper.Fg,                                                         -- Syntax errors
             TSException = colors_helper.Red,                                                    -- Exception handling
-            TSField = colors_helper.Cyan,                                                       -- Field names
+            TSField = colors_helper.Orange,                                                     -- Field names
             TSFloat = colors_helper.Orange,                                                     -- Floating-point numbers
             TSFunction = { fg = colors.blue, fmt = cfg.code_style.functions },                  -- Function names
             TSFuncBuiltin = { fg = colors.cyan, fmt = cfg.code_style.functions },               -- Built-in function names
