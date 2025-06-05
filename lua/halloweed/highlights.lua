@@ -172,6 +172,13 @@ function M.setup(colors, cfg)
     if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         hl.treesitter = {
             -- nvim-treesitter@0.9.2 and after (modern naming)
+
+            -- CSS specific
+            ["@property.css"] = { fg = colors.cyan }, -- CSS properties
+            ["@selector.css"] = { fg = colors.blue }, -- CSS selectors
+            ["@value.css"] = { fg = colors.green }, -- CSS values
+            ["@unit.css"] = { fg = colors.orange }, -- CSS units
+
             ["@annotation"] = { fg = colors.fg }, -- Annotations (e.g., Java annotations)
             ["@attribute"] = { fg = colors.cyan }, -- Attributes (e.g., Python decorators, C# attributes)
             ["@attribute.typescript"] = { fg = colors.blue }, -- TypeScript specific attributes
@@ -222,7 +229,7 @@ function M.setup(colors, cfg)
             ["@number.float"] = { fg = colors.orange }, -- Floating-point numbers
             ["@operator"] = { fg = colors.orange }, -- Operators
             ["@parameter.reference"] = { fg = colors.fg }, -- Parameter references
-            ["@property"] = { fg = colors.cyan }, -- Object properties/fields
+            ["@property"] = { fg = colors.yellow }, -- Object properties/fields
             ["@punctuation.delimiter"] = { fg = colors.fg }, -- Punctuation delimiters
             ["@punctuation.bracket"] = { fg = colors.fg }, -- Punctuation brackets
             ["@string"] = { fg = colors.green, style = cfg.code_style.strings }, -- String literals
